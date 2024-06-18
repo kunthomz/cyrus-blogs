@@ -50,4 +50,4 @@ $category_image_src = OrchardShop::get_category_image_src();
 
 
 </div>
-<?php yoast_breadcrumb('<nav class="breadcrumb"><div class="container">','</div></nav>', true); ?>
+<div class="breadcrumb">  <div class="container"><?php do_shortcode('[custom_breadcrumbs]'); ?> </div></div>

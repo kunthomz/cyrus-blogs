@@ -373,6 +373,9 @@ footer.main-f .main-f-bottom {
   border-bottom: 1px solid #eee;
   text-transform: none;
 }
+.breadcrumb span.bcrumbs-separator {
+  display: none;
+}
 .breadcrumb a {
   margin-right: 8px;
 }
