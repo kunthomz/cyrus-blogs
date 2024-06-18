@@ -1,0 +1,14 @@
+.go_to_top {
+    background-color: $gray-1000;
+    bottom: 30px;
+
+    .icon-arrow-up {
+        background-image: url(https://www.cyrusrugs.com/skin/frontend/cyrus/default/images/ui.totop.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:before {
+            visibility: hidden;
+        }
+    }
+}

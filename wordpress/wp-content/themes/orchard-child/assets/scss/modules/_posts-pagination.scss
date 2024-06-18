@@ -1,0 +1,29 @@
+.posts-pagination {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        margin: $indent__base;
+
+        .current,
+        a.page-numbers {
+            width: 40px;
+            padding: 6px 0;
+            text-align: center;
+            color: $black;
+            margin: 0 2px;
+        }
+
+        a.next,
+        a.prev {
+            border: 2px solid $gold;
+            padding: $indent__xs $indent__m;
+            width: auto;
+            color: $gold;
+        }
+
+        .current {
+            background-color: $gold;
+            color: $white;
+        }
+    }
+}

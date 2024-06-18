@@ -1,0 +1,26 @@
+@media(min-width: 768px) and (max-width: 1024px) {
+    .post-template-default {
+        .main-w.js--main-w.__normal {
+            > header {
+                > .t-w.js--t-w.__full-height.__parallax {
+                    padding-top: 0 !important;
+                    padding-bottom: 0px !important;
+                    height: 400px !important;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 767px) {
+    .post-template-default {
+        .main-w.js--main-w.__normal {
+            > header {
+                > .t-w.js--t-w.__full-height.__parallax {
+                    padding-top: 0 !important;
+                    padding-bottom: 0px !important;
+                    height: 300px !important;
+                }
+            }
+        }
+    }
+}

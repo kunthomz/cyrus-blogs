@@ -1,0 +1,49 @@
+#menu-main-menu > .menu-item > a:after,
+.breadcrumb a:after {
+	font-family: FontAwesome;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cbtn {
+	display: inline-block;
+	padding:12px 20px;
+	font-size:14px;
+	font-family: $secondaryfont;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.cbtn-outlined {
+	border:2px solid transparent;
+	background: transparent;
+	@include transition(all 0.5s ease);
+
+	&.cbtn-outlined-primary {
+		border-color:$gold;
+		color:$gold;
+		&:hover {
+			background: $gold;
+			color: $white;
+		}
+	}
+
+}
+
+a { color:$gray-600; }
+a:hover { color:$gold }
+
+p {
+	margin:0 0 30px;
+}
+
+.no-results-page_lbl {
+    font-size: 60px;
+}

@@ -1,0 +1,29 @@
+<?php
+$double_width = OrchardOptions::get_metaboxes_option('local_single_post--double_width');
+$post_format = get_post_format();
+
+if (is_sticky() || $double_width || $post_format == 'image') {
+
+	if (has_post_thumbnail()) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), OrchardOptions::get('posts--img_size') );
+		?><div class="post-grid_img-w"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark" class="post-grid_img" style="background-image:url(<?php echo esc_url($image[0]); ?>)"></a></div><?php
+	}
+
+} else { 
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+
+?>
+
+	<div class="post-grid_img-w
+		<?php if (has_post_thumbnail()) { ?>
+			js--post-grid-with-img
+		<?php } else { ?>
+			js--post-grid-without-img
+		<?php } ?>
+	" style="background-image:url('<?php echo $image[0]; ?>')">
+
+	<a href="<?php echo esc_url(get_permalink()); ?>" class="post-grid_img-lk" rel="bookmark"></a>
+
+	</div>
+
+<?php } ?>

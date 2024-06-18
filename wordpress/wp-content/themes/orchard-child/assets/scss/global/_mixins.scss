@@ -1,0 +1,74 @@
+@mixin boxshadow ($bs) {
+    box-shadow: $bs;
+    -moz-box-shadow: $bs;
+    -webkit-box-shadow: $bs;
+}
+
+@mixin borderradius($br) {
+    border-radius:$br;
+    -moz-border-radius:$br;
+    -webkit-border-radius:$br;
+}
+
+@mixin bgsizecover {
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-position: cover;
+}
+
+@mixin transition($trans) {
+    transition:$trans;
+    -moz-transition:$trans;
+    -webkit-transition:$trans;
+}
+
+@mixin rotate($deg) {
+    -ms-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin animate($attributes) {
+    -webkit-animation:$attributes;
+    -moz-animation:$attributes;
+    animation:$attributes;
+}
+
+.hor-ver-center {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.clearfix {
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;    
+    }
+    &:after { clear: both; }
+
+}
+
+.hidden { display: none }
+
+.squarebox,
+.semisquarebox,
+.rectanglebox {
+    position: relative;
+    overflow: hidden;
+    &:before {
+        content: "";
+        display: block;
+    }
+}
+.squarebox:before { padding-top: 100%; }
+.semisquarebox:before { padding-top: 60%; }
+.rectanglebox:before { padding-top:50%; }

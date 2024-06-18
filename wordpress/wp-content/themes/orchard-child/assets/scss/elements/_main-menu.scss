@@ -1,0 +1,24 @@
+nav.main-menu-w {
+    padding: 0;
+
+    .main-menu {
+        .menu-item-has-children {
+            .sub-menu {
+                background-color: $white;
+            }
+        }
+
+        > .menu-item > a {
+            padding: 24px 0;
+        }
+
+        .sub-menu {
+            border-top: 1px solid $gold;
+
+            .menu-item a {
+                text-transform: none;
+                font-weight: normal;
+            }
+        }
+    }
+}

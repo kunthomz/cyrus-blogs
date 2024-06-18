@@ -1,0 +1,280 @@
+@import "global/variables";
+@import "global/mixins";
+@import "global/global";
+
+// ------------------------------------
+// Elements
+@import "elements/go-to-top";
+@import "elements/main-menu";
+@import "elements/child-search-form";
+
+// ------------------------------------
+// Modules
+@import "modules/posts-pagination";
+@import "modules/related-posts";
+
+.main-h-bottom-w{
+	padding-top:0;
+}
+
+body {
+	font-family: $primaryfont;
+}
+
+.logo-w{
+	padding-bottom:0;
+}
+
+.logo{
+	max-height: 95px;
+    margin: 0 auto;
+}
+.main-h-bottom.__fixed .logo-w img{
+	 margin: 0;
+}
+header {
+
+	.main-h-bottom-w {
+		height: auto;
+		padding-bottom:0;
+	}
+
+	.main-h-bottom:not(.__fixed).__layout3 .main-h-bottom_menu-and-mods {
+		display: flex;
+		justify-content:space-between;
+		position: relative;
+
+		&:before, &:after {
+			position: absolute;
+			height:1px;
+			background: $gray-200;
+			top:0;
+			width:100vw;
+		}
+		&:before { left:50% }
+		&:after { right:50% }
+
+		.mods-w { order:2 }
+		.main-menu-w { order:1 }
+
+	}
+
+	#menu-main-menu {
+
+		& > .menu-item.menu-item-has-children a {
+			padding-right:17px;
+			&:after {
+				content:"\f107";
+				left:auto;
+				right:0;
+				top: 50%;
+				width:12px;
+				height:12px;
+				display: flex;
+				align-items:center;
+				justify-content:center;
+				background: none;
+				margin:-6px 0 0 0;
+			}
+		}
+
+		& > .menu-item .menu-item a {
+			padding-right:0;
+			&:after { display: none }
+		}
+
+	}
+
+}
+
+footer.main-f {
+
+	.main-f-top {
+		padding-bottom:75px;
+		padding-top:75px;
+		background:#fbfbfb;
+		border-top:1px solid #ddd;
+
+		h6, a, .fa { color:$black; }
+
+		a {
+			font-family: $primaryfont;
+		}
+
+	}
+
+	.textwidget {
+		li {
+			font-size:12px;
+			&:first-child { margin-top:0 }
+			&:last-child { margin-bottom:0 }
+		}
+	}
+
+	ul.social {
+
+		li {
+			display: inline-block;
+			margin:0 5px 0 0;
+			font-size:18px;
+			i { margin:0 }
+		}
+
+	}
+
+	.main-f-bottom {
+		border-top:1px solid $gray-200;
+	}
+
+}
+
+.post-grid {
+	border:1px solid $gray-100;
+
+	.post-grid_img-w {
+		height:220px;
+		@include bgsizecover;
+		background-position: center center;
+	}
+
+	.post-grid_desc-w {
+		padding-top:0;
+		padding-bottom:100px;
+		position: static;
+
+		header h3 {
+			line-height: 28px;
+			margin-bottom:5px;
+			a {
+				color:$gray-1000;
+			}
+		}
+
+	}
+
+	.post-grid_date { color:$black; opacity:1 }
+
+	.post-grid_category {
+		border-bottom:1px solid $gray-200;
+		padding:20px 0;
+		font-size:16px;
+		a { color:$gray-600; }
+		a:hover { color:$gold }
+	}
+
+	.post-grid_meta {
+		line-height: normal;
+		border:0;
+		padding:0 0 30px;
+	}
+
+	.cbtn {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+
+}
+
+#main-content {
+	background: $white;
+}
+
+.search-form-popup-w .search-form {
+	background-color:rgba(0,0,0,.75);
+}
+
+.search-el {
+	border:1px solid $gray-100;
+}
+
+.breadcrumb {
+	background: $white;
+	font-size:13px;
+	padding:25px 0;
+	border-bottom:1px solid $gray-100;
+	text-transform: none;
+
+	a {
+		margin-right:8px;
+
+		&:after {
+			content:"\f105";
+			color:$black;
+			margin-left:15px;
+		}
+
+	}
+
+}
+
+.post-single-w .post-single-cnt {
+
+	h1 {
+		line-height: 42px;
+		margin-bottom:15px;
+	}
+
+	.postedon {
+		text-transform: uppercase;
+		display: block;
+		margin-bottom:30px;
+	}
+
+}
+
+.sidebar {
+
+	.execphpwidget {
+
+		h5 {
+			line-height: 26px;
+			margin-bottom:20px;
+			a { color:$black; &:hover { color:$gold } }
+		}
+
+		ul {
+			list-style: none;
+			margin:0;
+			padding:0;
+		}
+
+		li {
+			padding:7px 0;
+			line-height: 20px;
+			&:first-child { padding-top:0 }
+			&:last-child { padding-bottom:0 }
+		}
+
+	}
+
+}
+.add-menu .menu-item:hover>a, .main-menu .menu-item:hover>a {
+    color: black !important;
+}
+.add-menu a:after, .main-menu a:after{
+	display:none !important;
+}
+.main-menu {
+	.sub-menu{
+		.menu-item:hover{
+			>a{
+			color:black;
+			opacity:1;
+			}
+		}
+		background-color: white;
+		a{
+			color:black;
+			opacity:1;
+		}
+	}
+}
+.main-f-top {
+	.widget a:hover{
+		color:black;
+	}
+	.widget_h{
+		font-size:13px;
+		font-family: $primaryfont;
+	}
+}
