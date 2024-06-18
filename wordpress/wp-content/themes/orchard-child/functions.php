@@ -48,3 +48,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?php
 }
+// Custom function to filter breadcrumbs
+function custom_breadcrumb_filter($links) {
+    // Check if the last breadcrumb is a page number
+    $last_item = end($links);
+
+    if (strpos($last_item['text'], 'Page ') !== false) {
+        // Remove the last item if it is a pagination link
+        array_pop($links);
+    }
+
+    return $links;
+}
+
+// Custom breadcrumbs function
+function my_custom_breadcrumbs() {
+    global $post;
+    $output = "";
+    $page = "";
+    $parent_link = "";
+    
+    $home_link = "<a href='" . home_url() . "'>Home</a>";
+    $separator = "<span class='bcrumbs-separator'> &rsaquo; </span>";
+
+    $parents = array_reverse(get_post_ancestors($post->ID));   
+    
+    if (!is_front_page()) {
+        // Output parent pages if they exist
+        foreach ($parents as $parent_id) {
+            $page .= "<a href='" . get_permalink($parent_id) . "'>" . html_entity_decode(get_the_title($parent_id)) . "</a>" . $separator;
+        }
+        
+        // Add current page or category
+        if (is_category() || is_single()) {
+            // If it's a category archive or single post
+            $category = get_the_category();
+            if ($category) {
+                $category = array_shift($category); // Get the first category
+                $page .= "<a href='" . get_category_link($category->term_id) . "'>" . $category->name . "</a>" . $separator;
+                
+                // Add current post title if it's a single post
+                if (is_single()) {
+                    $page .=  html_entity_decode(get_the_title($post->ID));
+                }
+            }
+        } elseif (get_post_type() == 'page' || get_post_type() == 'post') {
+            if (function_exists('yoast_breadcrumb')) {
+                echo yoast_breadcrumb('<div id="breadcrumbs">', '</div>', false);
+            }
+        }
+
+        // Print the final breadcrumb
+        echo "<div id='breadcrumbs'>" . $home_link . $separator . $page . "</div>";
+    }
+
+    return $output;
+}
+
+add_shortcode('custom_breadcrumbs', 'my_custom_breadcrumbs');
