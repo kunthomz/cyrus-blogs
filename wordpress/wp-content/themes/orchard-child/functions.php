@@ -106,3 +106,5 @@ function my_custom_breadcrumbs() {
 }
 
 add_shortcode('custom_breadcrumbs', 'my_custom_breadcrumbs');
+
+
