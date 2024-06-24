@@ -443,7 +443,23 @@ footer.main-f .main-f-bottom {
   font-family: 'Work Sans', sans-serif;
 }
 .main-h-bottom:not(.__fixed) .logo-w { padding-bottom:10px }
-
+/* ------------------------- single blog css ----------------------------------- */
+#blogs-category .category-thumbs {
+  width: 40%;
+}
+#blogs-category .category-content {
+  width: 60%;
+}
+#blogs-category .category-thumbs img {
+  height: 103px ;
+  object-fit: cover;
+}
+#blogs-category  .date {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
 @media (max-width:1199px) {
 	.main-h-bottom .mods-w { width:100% }
 	header .main-h-bottom:not(.__fixed).__layout3 .main-h-bottom_menu-and-mods { border-top:1px solid #eee }

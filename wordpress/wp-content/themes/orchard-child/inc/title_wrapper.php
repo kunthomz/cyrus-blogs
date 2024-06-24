@@ -51,3 +51,5 @@ $category_image_src = OrchardShop::get_category_image_src();
 
 </div>
 <div class="breadcrumb">  <div class="container"><?php do_shortcode('[custom_breadcrumbs]'); ?> </div></div>
+
+
