@@ -43,4 +43,6 @@ if (!$sidebar_location) {
 		<?php } ?>
 	</div>
 
+
+
 <?php get_footer(); ?>

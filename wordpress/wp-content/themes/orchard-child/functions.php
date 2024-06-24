@@ -3,15 +3,34 @@ $template_dir_child = get_template_directory() . '-child';
 
 require_once $template_dir_child . '/classes/PostsHelper.php';
 
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-function enqueue_parent_styles()
-{
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+add_action( 'wp_enqueue_scripts', 'enqueue_theme_assets' );
+
+function enqueue_theme_assets() {
+
+    // Enqueue parent theme style
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+    // Enqueue Owl Carousel CSS
+    wp_register_style( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css', array(), '', 'all' );
+    wp_enqueue_style( 'owl-carousel' );
+
+    // Enqueue Google Fonts
     wp_enqueue_style( 'site-font', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Work+Sans:400,700&display=swap' );
-    wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri().'/assets/css/styles.css', '', time() );
-    wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/assets/js/scripts.js', '', '', true );
-    wp_enqueue_script( 'custom-script' );
+
+    // Enqueue custom styles with a dynamic version number for cache busting
+    wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/styles.css', array(), time() );
+
+    // Register and enqueue custom scripts
+    wp_register_script( 'custom-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array('jquery'), '', true );
+    wp_register_script( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '', true );
+
+    // Enqueue the registered scripts
+    wp_enqueue_script( 'custom-scripts' );
+    wp_enqueue_script( 'owl-carousel' );
 }
+
+
+
 
 // Disable gutenberg style in Front
 add_filter('use_block_editor_for_post', '__return_false', 10);
