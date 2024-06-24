@@ -38,3 +38,25 @@ jQuery(function($) {
 	});
 	
 });
+
+var $ = jQuery;
+$(document).ready(function(){
+    $(".mobile-category-carousel").owlCarousel({
+        items: 1, // Number of items to display per page
+        loop: true,
+        margin: 10,
+        dots: true,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+});
