@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) die('-1');
 
 $category_image_on_bg = OrchardOptions::get('title_wrapper--category_image_on_bg');
 $category_image_src = OrchardShop::get_category_image_src();
+$title = get_the_title(); // Get the title
 
 ?>
 <div class="
@@ -15,8 +16,6 @@ $category_image_src = OrchardShop::get_category_image_src();
 	if ($category_image_on_bg && $category_image_src) {?> __products-subcat<?php }
 	?>
 ">
-
-
 	<?php if ($category_image_on_bg && $category_image_src) { ?>
 		<div class="t-w_bg js--t-w-bg"
 			style="
@@ -45,11 +44,10 @@ $category_image_src = OrchardShop::get_category_image_src();
 		echo esc_attr($bg_overlay['rgba']);
 	?>;"></div>
 
-
 	<div class="js--under-main-h"></div>
 
-
+	<div class="t-w_title">
+		<h1><?php echo esc_html($title); ?></h1>
+	</div>
 </div>
-<div class="breadcrumb">  <div class="container"><?php do_shortcode('[custom_breadcrumbs]'); ?> </div></div>
-
-
+<div class="breadcrumb">  <div class="container"><?php echo do_shortcode('[custom_breadcrumbs]'); ?> </div></div>
