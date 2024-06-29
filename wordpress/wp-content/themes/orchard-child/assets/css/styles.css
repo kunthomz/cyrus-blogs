@@ -444,6 +444,22 @@ footer.main-f .main-f-bottom {
 }
 .main-h-bottom:not(.__fixed) .logo-w { padding-bottom:10px }
 /* ------------------------- single blog css ----------------------------------- */
+.single-post .t-w.js--t-w.__full-height.__parallax .t-w_title {
+  position: relative; /* or absolute */
+  z-index: 10; /* Adjust as needed */
+  text-align: center;
+  top: 50%; /* Adjusts vertical position */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Centers text vertically and horizontally */
+  /* Additional styling */
+}
+.single-post .t-w.js--t-w.__full-height.__parallax .t-w_title h1 {
+  font-size: 46px;
+  font-family: "Work Sans", sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+/* ------------------------- single blog css ----------------------------------- */
 .mobile-category-carousel{
   position: relative;
 }
