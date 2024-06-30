@@ -459,6 +459,9 @@ footer.main-f .main-f-bottom {
   color: #fff;
   font-weight: 400;
 }
+.t-w_bg-overlay {
+  background: rgba(0, 0, 0, .35);
+}
 /* ------------------------- single blog css ----------------------------------- */
 .mobile-category-carousel{
   position: relative;
