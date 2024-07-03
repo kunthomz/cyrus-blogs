@@ -642,3 +642,10 @@ div#execphp-2 {
 	ul.main-menu { margin:0 -20px }
 	ul.main-menu .menu-item { padding:0 20px }
 }
+
+@media (max-width:500px) {
+  .single-post .t-w_title h1 {
+    font-size: 36px !important;
+    line-height: 51px !important;
+  }
+}
