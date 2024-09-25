@@ -1,6 +1,9 @@
 <?php
 $template_dir_child = get_template_directory() . '-child';
 
+// book listing on wp admin
+require_once get_stylesheet_directory() . '/gr-functions.php';
+
 require_once $template_dir_child . '/classes/PostsHelper.php';
 
 add_action( 'wp_enqueue_scripts', 'enqueue_theme_assets' );
