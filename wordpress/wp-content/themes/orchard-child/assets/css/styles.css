@@ -118,7 +118,7 @@ nav.main-menu-w .main-menu .sub-menu .menu-item a {
   padding: 1.4em 1em;
 }
 .child-search-form-wrapper span.search-form_button-tx {
-  display: none;
+  display: none; 
 }
 .posts-pagination__wrapper {
   display: flex;
@@ -641,4 +641,11 @@ div#execphp-2 {
 @media (min-width:1320px) {
 	ul.main-menu { margin:0 -20px }
 	ul.main-menu .menu-item { padding:0 20px }
+}
+
+@media (max-width:500px) {
+  .single-post .t-w_title h1 {
+    font-size: 36px !important;
+    line-height: 51px !important;
+  }
 }
