@@ -2,7 +2,7 @@
 $template_dir_child = get_template_directory() . '-child';
 
 // book listing on wp admin
-require_once get_stylesheet_directory() . '/gr-functions.php';
+require_once get_stylesheet_directory() . '/gr-function.php';
 
 require_once $template_dir_child . '/classes/PostsHelper.php';
 
